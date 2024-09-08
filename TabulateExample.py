@@ -2,6 +2,7 @@
 # Tabulate accessibe through 'tb' instead of
 # 'tabulate.tabulate' for easier use.
 from tabulate import tabulate as tb
+
 print("(1) On your marks...")
 # end="" tells python not to go down to the next line of the
 # console output, so the next print() command continues on that line.
@@ -26,11 +27,18 @@ for i in range(len(rawdata)):
 # Now we need to convert the data so tabulate understands it -
 # from [..., ..., ..., ...] to [[...],[...],[...],[...]]
 # as it is currently just a string array.
-# However, tabulate needs an array of arrays to mimic
-# a table format.
+# However, tabulate needs an array of arrays
+# to be able to draw a table.
 data = []
+# Foreach string in the array -
+# bit = ...,...,...,... (string).
 for bit in rawdata:
+    # Split the strings by commas.
+    # Note how bit has been converted
+    # from a string to an array.
     bit = bit.split(",")
+    # bit = [...,...,...,...] (array of strings).
+    # data is an array of arrays.
     data.append(bit)
 print("done!\n")
 # Looks good! now we can print it.
