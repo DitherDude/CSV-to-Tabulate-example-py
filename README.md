@@ -1,3 +1,4 @@
+*Note: Python is not my first language (C# is) so the code may be a little rusty...
 # TabulateExample
 A python script to ease importing a CSV file into tabluate (`> pip install tabulate`).
 
