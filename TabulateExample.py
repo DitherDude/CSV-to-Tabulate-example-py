@@ -15,13 +15,15 @@ try:
     file = open("RabbitBytes.csv", "r")
 except FileNotFoundError:
     # File is not found.
-    print("Missing data file! exitting...")
+    print("Missing data file! Exiting...")
     quit()
 # Program continues as file has been located.
 print("done!")
 print("(3) Loading data...", end="")
 rawdata = file.readlines()
-# Remove the \n character from the end of each line
+# Remove the \n character from the end of each line.
+# The next two lines of code are actually redundant,
+# but just safer to use them.
 for i in range(len(rawdata)):
     rawdata[i] = rawdata[i].replace("\n", "")
 # Now we need to convert the data so tabulate understands it -
